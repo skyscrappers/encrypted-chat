@@ -25,7 +25,7 @@ while True:
 
     request_dict = ast.literal_eval(str(rsa.decrypt(encrypted_request, d, n)))
 
-    print("Decrypted request from client")
+    print("Decrypted request from client:")
     pprint(request_dict)
 
     """
@@ -57,7 +57,7 @@ while True:
 
     response_str = str(response_dict)
 
-    print("Unencrypted response from PKDA")
+    print("Unencrypted response from PKDA:")
     pprint(response_dict)
 
     # encrypted_response = str(rsa.encrypt(response_str, i_e, i_n))
