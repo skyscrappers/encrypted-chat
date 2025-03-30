@@ -55,10 +55,9 @@ client1_d, client1_n, = d, n
 server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 server_socket.bind((HOST, PORT_CLIENT1))
 server_socket.listen(5)
+client_socket, client_address = server_socket.accept()
 
 while True:
-    client_socket, client_address = server_socket.accept()
-
     encrypted_response = int(client_socket.recv(40960).decode())
 
     response = str(rsa.decrypt(encrypted_response, client1_d, client1_n))
